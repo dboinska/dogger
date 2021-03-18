@@ -1,0 +1,48 @@
+{
+  "name": "learning-hub",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Callenowy/learning-hub.git"
+  },
+  "author": "Callenowy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Callenowy/learning-hub/issues"
+  },
+  "homepage": "https://github.com/Callenowy/learning-hub#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "autoprefixer": "^10.2.5",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
+    "parcel": "^2.0.0-nightly.628",
+    "postcss": "^8.2.8",
+    "postcss-modules": "^4.0.0",
+    "prettier": "^2.2.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+  }
+}
