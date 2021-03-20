@@ -37,3 +37,6 @@ yarn-error.log*
 # parcel
 .cache
 .parcel-cache
+
+# history
+.history
