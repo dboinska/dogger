@@ -1,7 +1,8 @@
 import bootstrap from 'bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/index.css';
+import './sass/index2.scss';
+// import './styles/index.css';
 
 import './js/slicksettings';
 
