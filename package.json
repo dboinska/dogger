@@ -52,5 +52,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
   }
 }

@@ -14,6 +14,7 @@ module.exports = {
     rollupOptions: {
       input: {
         index: `${PATHS.src}/index.html`,
+        subpage: `${PATHS.src}/subpage.html`,
         //nested: resolve(__dirname, 'nested/index.html')
       },
     },
