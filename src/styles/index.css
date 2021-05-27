@@ -979,3 +979,15 @@ section.questions {
     padding: 0;
   }
 }
+
+img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.image {
+  width: 400px;
+  height: auto;
+  display: block;
+}
