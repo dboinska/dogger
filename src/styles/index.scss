@@ -259,10 +259,13 @@ p {
 
 
 section {
-  &.questions {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+  
+  padding-top: 5rem;
+  padding-bottom: 0;
+  // &.questions {
+  //   padding-top: 5rem;
+  //   padding-bottom: 0;
+  // }
 }
 
 .section {
@@ -486,9 +489,7 @@ li .dropdown-item {
     font-weight: 400;
     font-size: 1rem;  
   }
-  .description {
-    padding-bottom: 5rem;
-  }
+  
 }
 
 .social-circle {
@@ -576,7 +577,7 @@ li .dropdown-item {
 }
 section {
   &.services {
-    padding: 5rem 3rem 5rem 3rem;
+    padding: 5rem 3rem 0 3rem;
 }
   &.pricing {
     & li::before {
@@ -1219,6 +1220,10 @@ footer {
     .b-bottom {
       padding-bottom: 0;
     }
+  }
+  
+  .description {
+    padding: 0 3rem 5rem 3rem !important;
   }
 
   // section .trainers {
