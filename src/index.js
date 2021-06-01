@@ -1,5 +1,6 @@
 import 'bootstrap';
 import './js/slicksettings';
+import { debounce } from './js/utils.js';
 
 // if (process.env.NODE_ENV === 'development') {
 //   require('../index.html');
@@ -9,26 +10,12 @@ const navButton = document.getElementById('navbar-button');
 const { body } = document;
 navButton.addEventListener('click', openNav);
 
-function openNav() {
-  body.classList.contains('overflow-hidden')
-    ? body.classList.remove('overflow-hidden')
-    : body.classList.add('overflow-hidden');
-}
+const OVERFLOW_HIDDEN = 'overflow-hidden';
 
-function debounce(func, wait = 20, immediate = true) {
-  var timeout;
-  return function () {
-    var context = this,
-      args = arguments;
-    var later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
+function openNav() {
+  body.classList.contains(OVERFLOW_HIDDEN)
+    ? body.classList.remove(OVERFLOW_HIDDEN)
+    : body.classList.add(OVERFLOW_HIDDEN);
 }
 
 const slideRows = document.querySelectorAll('.scroll-bottom');
@@ -134,7 +121,6 @@ const questions = [...document.querySelectorAll('.question')];
 //   });
 // });
 
-const answers = document.querySelectorAll('.answers');
 questions.forEach(question => {
   const aQuest = question.querySelector('.question-a');
   aQuest.addEventListener('click', handleToggleQuestion.bind(null, question));
@@ -163,12 +149,22 @@ window.addEventListener('scroll', function () {
 
 // ***** scroll links *****
 const linksContainer = document.querySelector('.navbar-nav');
-const links = document.querySelectorAll('.nav-link');
+const links = [...document.querySelectorAll('.nav-link')];
 links.forEach(function (link) {
   link.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (body.classList.contains('overflow-hidden')) {
-      body.classList.remove('overflow-hidden');
+    // event.preventDefault();
+    console.log(event.target);
+    const previousLink = links.find(link =>
+      link.classList.contains('active-link')
+    );
+    if (previousLink) {
+      previousLink.classList.remove('active-link');
+    }
+
+    event.target.classList.add('active-link');
+
+    if (body.classList.contains(OVERFLOW_HIDDEN)) {
+      body.classList.remove(OVERFLOW_HIDDEN);
     }
     const navDropdown = document.getElementById('navbarNavDropdown');
     if (navDropdown.classList.contains('show')) {
@@ -192,6 +188,19 @@ links.forEach(function (link) {
       left: 0,
       top: position,
     });
-    linksContainer.style.height = 0;
+  });
+});
+
+const dropdowns = [...document.querySelectorAll('.dropdown-item')];
+dropdowns.forEach(function (dropdown) {
+  dropdown.addEventListener('click', function (event) {
+    console.log(event.target);
+    const previousDropdown = dropdowns.find(dropdown =>
+      dropdown.classList.contains('active-link')
+    );
+    if (previousDropdown) {
+      previousDropdown.classList.remove('active-link');
+    }
+    event.target.classList.add('active-link');
   });
 });

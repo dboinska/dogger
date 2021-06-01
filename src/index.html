@@ -11,15 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Vollkorn:ital@1&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/5567926149.js"
-      crossorigin="anonymous"
-    ></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -33,7 +28,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container space-between">
           <div>
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand" href="/"
               >Dogger <span class="text-primary">.</span>
             </a>
           </div>
@@ -86,14 +81,16 @@
                         <a class="dropdown-item" href="#gallery">Gallery</a>
                       </li>
                       <li><a class="dropdown-item" href="#blog">Blog</a></li>
-                      <li>
-                        <a class="dropdown-item more" id="more" href="#"
+                      <li class="more">
+                        <a class="dropdown-item" id="more" href="#"
                           >More Links</a
                         >
                         <ul class="menu-right">
-                          <li><a href="#">Menu One</a></li>
-                          <li><a href="#">Menu One</a></li>
-                          <li><a href="#">Menu One</a></li>
+                          <li>
+                            <a href="#" class="more-link">Menu One</a>
+                          </li>
+                          <li><a href="#" class="more-link">Menu One</a></li>
+                          <li><a href="#" class="more-link">Menu One</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -144,7 +141,7 @@
                 <img
                   class="hero-img hero-img-sm"
                   src="./img/pexels-anna-shvets-4587992-small.jpg"
-                  alt="a head carved out of wood"
+                  alt="shiba"
                 />
               </picture>
             </div>
@@ -306,8 +303,6 @@
             <div class="my-col-6 sm-order-2 dog-img-center scroll-bottom">
               <a
                 class="video"
-                data-fancybox=""
-                data-ratio="1"
                 href="https://player.vimeo.com/external/364841370.sd.mp4?s=8a3174708b70bbb90526d5aad598bd918223c202&profile_id=139&oauth2_token_id=57447761"
                 ><i class="fas fa-play-circle"></i>
               </a>
@@ -319,7 +314,7 @@
                 <img
                   class="img-about-us"
                   src="./img/pexels-genadi-yakovlev-5440092_small.jpg"
-                  alt="a head carved out of wood"
+                  alt="bulldog"
                 />
               </picture>
             </div>
@@ -332,11 +327,13 @@
             <div class="paws paws-center">
               <i class="fas fa-paw bigger-paw"></i>
             </div>
-            <h2 class="h2-center">Our trainers</h2>
-            <p class="text-center p-trainers description">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
-            </p>
+            <div class="narrow">
+              <h2 class="h2-center">Our trainers</h2>
+              <p class="text-center p-trainers description">
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+            </div>
           </div>
           <div class="row">
             <div class="col-lg-4 scroll-bottom">
@@ -345,7 +342,7 @@
                 <img
                   class="img-trainers mt-0"
                   src="./img/pani1-small.jpg"
-                  alt="a head carved out of wood"
+                  alt="trainer Jessica White"
                 />
               </picture>
               <h4 class="h4-trainers">Jessica White</h4>
@@ -379,7 +376,7 @@
                 <img
                   class="img-trainers"
                   src="./img/pani2-small.jpg"
-                  alt="a head carved out of wood"
+                  alt="trainer Valerie Elash"
                 />
               </picture>
               <h4 class="h4-trainers">Valerie Elash</h4>
@@ -414,7 +411,7 @@
                 <img
                   class="img-trainers"
                   src="./img/pani3-small.jpg"
-                  alt="a head carved out of wood"
+                  alt="trainer Alicia Jones"
                 />
               </picture>
               <h4 class="h4-trainers">Alicia Jones</h4>
@@ -466,18 +463,18 @@
                 <span class="bigger-price text-uppercase">$47</span>/ year
               </p>
               <ul class="l-height-2rem services">
-                <li><p>Officia quaerat eaque neque</p></li>
-                <li><p>Possimus aut consequuntur incidunt</p></li>
+                <li><span>Officia quaerat eaque neque</span></li>
+                <li><span>Possimus aut consequuntur incidunt</span></li>
                 <li>
-                  <p class="unavailable">Lorem ipsum dolor sit amet</p>
+                  <span class="unavailable">Lorem ipsum dolor sit amet</span>
                 </li>
                 <li>
-                  <p class="unavailable">Consectetur adipisicing elit</p>
+                  <span class="unavailable">Consectetur adipisicing elit</span>
                 </li>
                 <li>
-                  <p class="unavailable">
+                  <span class="unavailable">
                     Dolorum esse odio quas architecto sint
-                  </p>
+                  </span>
                 </li>
               </ul>
               <a href="#" class="btn btn-secondary btn-buy mt-5">Buy Now</a>
@@ -488,21 +485,21 @@
                 <span class="bigger-price text-uppercase">$250</span>/ year
               </p>
               <ul class="l-height-2rem services">
-                <li><p>Officia quaerat eaque neque</p></li>
-                <li><p>Possimus aut consequuntur incidunt</p></li>
+                <li><span>Officia quaerat eaque neque</span></li>
+                <li><span>Possimus aut consequuntur incidunt</span></li>
                 <li>
-                  <p>Lorem ipsum dolor sit amet</p>
+                  <span>Lorem ipsum dolor sit amet</span>
                 </li>
                 <li>
-                  <p>Consectetur adipisicing elit</p>
+                  <span>Consectetur adipisicing elit</span>
                 </li>
                 <li>
-                  <p class="unavailable">
+                  <span class="unavailable">
                     Dolorum esse odio quas architecto sint
-                  </p>
+                  </span>
                 </li>
               </ul>
-              <a href="#" class="btn btn-light btn-buy">Buy Now</a>
+              <a href="#" class="btn btn-light btn-buy mt-5">Buy Now</a>
             </div>
             <div class="col-md-4 p-0 bgc-light pt-5">
               <h5 class="h5-pricing text-uppercase text-center">
@@ -512,19 +509,19 @@
                 <span class="bigger-price text-uppercase">$850</span>/ year
               </p>
               <ul class="l-height-2rem services">
-                <li><p>Officia quaerat eaque neque</p></li>
-                <li><p>Possimus aut consequuntur incidunt</p></li>
+                <li><span>Officia quaerat eaque neque</span></li>
+                <li><span>Possimus aut consequuntur incidunt</span></li>
                 <li>
-                  <p>Lorem ipsum dolor sit amet</p>
+                  <span>Lorem ipsum dolor sit amet</span>
                 </li>
                 <li>
-                  <p>Consectetur adipisicing elit</p>
+                  <span>Consectetur adipisicing elit</span>
                 </li>
                 <li>
-                  <p>Dolorum esse odio quas architecto sint</p>
+                  <span>Dolorum esse odio quas architecto sint</span>
                 </li>
               </ul>
-              <a href="#" class="btn btn-secondary btn-buy">Buy Now</a>
+              <a href="#" class="btn btn-secondary btn-buy mt-5">Buy Now</a>
             </div>
           </div>
         </div>
@@ -769,40 +766,46 @@
         <div class="container-fluid">
           <div class="row row-fluid gallery-img">
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_1.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_1.jpg" alt="bulldog" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_2.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_2.jpg" alt="miniature spitz" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_3.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_3.jpg" alt="vet" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_4.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_4.jpg" alt="poodle" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_5.jpg" alt="Image" />
+              <img
+                src="./img/dogger_img_sm_5.jpg"
+                alt="border colie blue merle"
+              />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_6.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_6.jpg" alt="family" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_1.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_1.jpg" alt="bulldog" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_2.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_2.jpg" alt="miniature spitz" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_3.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_3.jpg" alt="vet" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_4.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_4.jpg" alt="poodle" />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_5.jpg" alt="Image" />
+              <img
+                src="./img/dogger_img_sm_5.jpg"
+                alt="border colie blu merle"
+              />
             </div>
             <div class="col-6 col-md-4 col-lg-3 p-0">
-              <img src="./img/dogger_img_sm_6.jpg" alt="Image" />
+              <img src="./img/dogger_img_sm_6.jpg" alt="family" />
             </div>
           </div>
         </div>
@@ -1025,11 +1028,9 @@
                       placeholder="Write your notes or questions here.."
                     ></textarea>
                   </div>
-                  <input
-                    class="btn btn-dark btn-md text-white"
-                    type="submit"
-                    value="Send Message"
-                  />
+                  <button class="btn btn-dark btn-md text-white" type="submit">
+                    Send Message
+                  </button>
                 </form>
               </div>
               <div class="col-12 col-md-6 bgc-contact">
@@ -1100,21 +1101,23 @@
           <div class="col-12 col-md-4 ps-md-5">
             <h3 class="c-white sm-pt-2rem">Subscribe Newsletter</h3>
             <div class="row">
-              <div class="input-group">
-                <input
-                  class="form-control border-secondary c-white bg-transparent"
-                  type="text"
-                  aria-describedby="newsletter"
-                  placeholder="Enter Email"
-                />
-                <button
-                  id="newsletter"
-                  class="btn btn-newsletter"
-                  type="button"
-                >
-                  Send
-                </button>
-              </div>
+              <form action="#">
+                <div class="input-group">
+                  <input
+                    class="form-control border-secondary c-white bg-transparent"
+                    type="text"
+                    aria-describedby="newsletter"
+                    placeholder="Enter Email"
+                  />
+                  <button
+                    id="newsletter"
+                    class="btn btn-newsletter"
+                    type="button"
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -1128,33 +1131,18 @@
       </div>
     </footer>
     <script
+      src="https://kit.fontawesome.com/5567926149.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-
     <script type="module" src="/index.js"></script>
   </body>
 </html>

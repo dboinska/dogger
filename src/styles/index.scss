@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import '_colors.scss';
 
 * {
   box-sizing: border-box;
@@ -8,7 +9,7 @@
 
 body {
   background-color: transparent;
-  color: gray;
+  color: $gray;
   font-family: 'Open Sans', sans-serif;
   transition: all 0.5s ease;
 }
@@ -22,7 +23,7 @@ img {
     transition: all 0.5s;
 
     &:hover {
-      box-shadow: 10px 10px #a2c0be;
+      box-shadow: 10px 10px $opal;
     }
   }      
 }
@@ -36,7 +37,7 @@ a {
 }
 
 .text-primary {
-  color: #a2c0be !important;
+  color: $opal !important;
 }
 
 ul {
@@ -50,34 +51,38 @@ ul {
 }
 
 nav {
- // background-color: transparent;
   height: 4.2rem;
   width: 100vw;
   
   .nav-link {
     z-index: 1;
-    font-size: 1.25 rem;
-    line-height: 1.7rem;
+    line-height: 3.7rem;
     padding: 1rem;
     padding: 1rem 3rem !important;
 
     &:hover {
-      background-color: rgb(223, 223, 223);
+      background-color: $alto;
+    }
+
+    &.active-link {
+      color: $opal !important;
     }
   }
 }
 
+.dropdown-item.active-link {
+  color:  $opal !important;
+  background-color: $white;
+}
   
 .header {
   z-index: 9999;
     position: fixed;
     width: 100%;
     background-color: transparent;
-  
-  //position: fixed;
 
   .fixed {
-    background-color: white !important;
+    background-color: $white !important;
     box-shadow: rgba(0, 0, 0, 0.1) 4px 0 20px -5px;
     position: fixed;
   }
@@ -144,7 +149,7 @@ h5,
 h6 {
   text-rendering: optimizeLegibility;
   line-height: 1.2;
-  color: #000;
+  color: $black;
   font-weight: 500;
   margin: 0;
   margin-bottom: 0.5rem;
@@ -184,22 +189,22 @@ h3 {
     
     &::before{
       content: '\f1b0';
-      color: #ccc;
+      color: $silver;
       font-weight: 900;
       font-family: 'Font Awesome 5 Free', serif;
       padding: 0.25rem;
       margin-right: 1rem;
       width: 30px;
       height: 30px;
-      border: 2px solid #ccc;
+      border: 2px solid $silver;
       border-radius: 50%;
     }
 
     &:hover::before,
     &.clicked-question::before  {
-      color: white;
-      background-color: #a2c0be;
-      border-color: #a2c0be;
+      color: $white;
+      background-color: $opal;
+      border-color: $opal;
     }
   }
 }
@@ -220,13 +225,13 @@ h6 {
 }
 
 p {
-  color: #7d7d7d;
+  color: $boulder;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.7rem;
 
   &.text-muted {
-    color: #6c757d !important;
+    color: $paleSky !important;
     font-weight: 400;
     line-height: 1.7;
   }
@@ -262,10 +267,6 @@ section {
   
   padding-top: 5rem;
   padding-bottom: 0;
-  // &.questions {
-  //   padding-top: 5rem;
-  //   padding-bottom: 0;
-  // }
 }
 
 .section {
@@ -300,37 +301,21 @@ section {
     margin-top: 1rem;
   }
   &.bg-lightgray {
-    background: rgb(240, 238, 238);
+    background: $gallery;
     background: linear-gradient(
       90deg,
       rgba(240, 238, 238, 1) 81%,
       rgba(231, 226, 230, 1) 94%
     );
   }
-}
-
-// .dropdown-menu {
-//   background: rgb(240, 238, 238);
-//   background: linear-gradient(
-//     90deg,
-//     rgba(240, 238, 238, 1) 81%,
-//     rgba(231, 226, 230, 1) 94%
-//   );
-//   border: none;
-//   border-top: 1px solid lightgray;
-//   border-bottom: 1px solid lightgray;
-//   text-align: center;
-//   padding: 1rem 4rem;
-//   position: relative;
-// }
- 
+} 
 
 li .dropdown-item {
   color: rgba(0, 0, 0, 0.55);
   padding: 12px 24px;
   
   &:hover {
-    background-color: rgb(223, 223, 223);
+    background-color: $athensGray;
   }
 }
 
@@ -344,10 +329,11 @@ li .dropdown-item {
   font-family: 'Font Awesome 5 Free', serif;
 }
 
+
 .my-btn {
-  background-color: #a2c0be;
-  border: 1px solid #a2c0be;
-  color: #fff;
+  background-color: $opal;
+  border: 1px solid $opal;
+  color: $white;
   padding: 10px 30px;
   border-radius: 50px;
   display: inline-block;
@@ -355,9 +341,9 @@ li .dropdown-item {
 
   &:hover, 
   &:focus {
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
+    color: $white;
+    background-color: $black;
+    border-color: $black;
   }
 }
 
@@ -371,9 +357,9 @@ li .dropdown-item {
   padding: 10px 30px;
 
   &:hover {
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
+    color: $white;
+    background-color: $black;
+    border-color: $black;
   }
 
   &.btn-buy {
@@ -388,14 +374,14 @@ li .dropdown-item {
   }
 
   &.btn-light {
-    background-color: rgb(162, 192, 190);
-    border-color: rgb(162, 192, 190);
-    color: white;
+    background-color: $opal;
+    border-color: $opal;
+    color: $white;
 
     &:hover {
-      color: #fff;
-      background-color: #000;
-      border-color: #000;
+      color: $white;
+      background-color: $black;
+      border-color: $black;
     }
   }
 }
@@ -413,7 +399,7 @@ li .dropdown-item {
   .fa-paw {
     font-size: 1.2rem;
     padding: 0.5rem;
-    color: #a2c0be;
+    color: $opal;
   }
   
   .bigger-paw {
@@ -445,7 +431,7 @@ li .dropdown-item {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: $white;
   font-size: 3.125rem;
 }
 
@@ -461,10 +447,10 @@ li .dropdown-item {
 }
 
 .trainers {
-  background-color: #a2c0be;
+  background-color: $opal;
 
   .paws .bigger-paw {
-    color: white;
+    color: $white;
   }
 
   .img-trainers {
@@ -474,7 +460,7 @@ li .dropdown-item {
     margin: 3rem auto;
 
     &:hover {
-      box-shadow: 5px 5px black;
+      box-shadow: 5px 5px $black;
     }
   }
 
@@ -493,7 +479,7 @@ li .dropdown-item {
 }
 
 .social-circle {
-  background-color: white;
+  background-color: $white;
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
@@ -511,7 +497,7 @@ li .dropdown-item {
   }
 
   .fab {
-    color: black;
+    color: $black;
   }
 }
 
@@ -520,13 +506,13 @@ li .dropdown-item {
 }
 
 .narrow p {
-  color: gray;
+  color: $gray;
   font-weight: 400;
   padding-bottom: 5rem;
 }
 
 .c-white {
-  color: white;
+  color: $white;
 }
 
 .bold {
@@ -534,21 +520,22 @@ li .dropdown-item {
 }
 
 .bgc-light {
-  background-color: #a2c0be;
+  background-color: $opal;
 }
 
 .bgc-dark {
-  background-color: rgb(52, 58, 64);
+  background-color: $outerSpace;
 }
 
 .pricing {
   .h5-pricing {
     font-size: 1.7rem;
-    color: white;
+    color: $white;
   }
 
   .bigger-price {
     font-size: 3rem;
+    padding: 0 1rem;
   }
   
   .unavailable {
@@ -569,15 +556,15 @@ li .dropdown-item {
       position: absolute;
     }
 
-    p {
-      color: white;
+    span {
+      color: $white;
       font-weight: 400;
     }
   }
 }
 section {
   &.services {
-    padding: 5rem 3rem 0 3rem;
+    padding: 5rem 3rem 5rem 3rem;
 }
   &.pricing {
     & li::before {
@@ -587,9 +574,10 @@ section {
       padding-left: 3rem;
     }
 
-    & p {
+    & span {
       padding-left: 5rem;
       padding-right: 3rem;
+      display: inline-block;
     }
   } 
 }
@@ -600,19 +588,19 @@ section {
   display: block;
   top: -24px;
   position: relative;
-  color: black;
+  color: $black;
 
   &:hover {
-    color: black;
+    color: $black;
   }
 }
 
 .customers {
-  background-color: rgb(248, 249, 250);
+  background-color: $athensGray;
 
   .card-body {
     position: relative;
-    background-color: rgb(162, 192, 190);
+    background-color: $opal;
     border-radius: 5px;
     box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.4);
     height: 270.4px;
@@ -624,7 +612,7 @@ section {
       height: 0;
       border-left: 16px solid transparent;
       border-right: 16px solid transparent;
-      border-top: 16px solid rgb(162, 192, 190);
+      border-top: 16px solid $opal;
       margin: 0 auto 0;
       position: absolute;
       top: 100%;
@@ -646,7 +634,7 @@ section {
       height: 100px;
       position: relative;
       margin: 3rem auto 1rem auto;
-      border: 10px solid rgb(162, 192, 190);
+      border: 10px solid $opal;
     }
   }
 
@@ -654,7 +642,7 @@ section {
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
-    color: #000 !important;
+    color: $black !important;
     font-family: 'Vollkorn', serif;
   }
 
@@ -668,7 +656,7 @@ section {
 
   figcaption {
     font-size: 1.125rem;
-    color: black;
+    color: $black;
     text-align: center;
   }
 }
@@ -692,7 +680,7 @@ section {
 
       &:hover {
         scale: 1.1;
-        box-shadow: 0 0 1rem rgb(156, 173, 172);
+        box-shadow: 0 0 1rem $edward;
       }
     }
   }
@@ -710,15 +698,15 @@ section {
 
   a {
     transition: color 0.4s ease;
-    color: black;
+    color: $black;
 
     &:hover {
-      color: #a2c0be;
+      color: $opal;
     }
   }
 
   .text-muted {
-    color: #b3b3b3 !important;
+    color: $nobel !important;
   }
 }
 
@@ -737,11 +725,11 @@ section {
 .contact {
   
   .bgc-form {
-    background-color: #a2c0be;
+    background-color: $opal;
   }
 
   .bgc-contact {
-    background-color: rgb(108, 117, 125);
+    background-color: $paleSky;
   }
 
   & .row {
@@ -757,31 +745,27 @@ section {
   & .paws::before,
   & .paws::after {
     opacity: 0.3;
-    color: #a2c0be;
+    color: $opal;
   }
 
   .container-contact {
     li {
-      color: rgb(168, 177, 184);
+      color: $hitGray;
     }
   }
 
   & h3 {
-    color: rgb(64, 90, 88);
+    color: $mineralGreen;
     font-size: 2rem;
   }
 
   & label {
     padding-bottom: 0.5rem;
   }
-
-  & .btn {
-    width: 10.5rem; 
-  } 
 }
 
 footer {
-  background-color: rgb(51, 51, 51);
+  background-color: $mineShaft;
 
   & h3 {
     padding-top: 7rem;
@@ -790,18 +774,20 @@ footer {
   }
 
   .btn-newsletter {
-    background-color: white;
+    background-color: $white;
     color: rgb(51, 51, 51);
     border-radius: 5px;
     transition: color 0.4s ease;
 
     &:hover {
-      background-color: rgb(216, 216, 216);
+      background-color: $alto;
     }
   }
 
-  .input-group > .form-control {
-    width: 1%;
+  form {
+    .input-group > .form-control {
+      width: 1%;
+  }
   }
 }
 
@@ -813,11 +799,11 @@ footer {
   } 
 
   & i {
-    color: rgb(153, 153, 153);
+    color: $dustyGray;
     transition: color 0.3s ease;
 
     &:hover {
-      color: white;
+      color: $white;
     }
   }
 
@@ -825,19 +811,19 @@ footer {
     transition: color 0.3s ease;
 
     &:hover {
-      color: white;
+      color: $white;
     }
   }
 
   & input:focus,
   & .btn-newsletter:focus {
     box-shadow: none !important;
-    color: white;
+    color: $white;
   }
 
   & .b-bottom {
     padding-bottom: 6rem;
-    border-bottom: 1px solid #7d7d7d;
+    border-bottom: 1px solid $boulder;
   } 
 }
 
@@ -929,14 +915,14 @@ footer {
       margin: 0 auto;
   
       &:hover {
-        box-shadow: 10px 10px black;
+        box-shadow: 10px 10px $black;
       }
     }
   }
   
 
   .fluid-img:hover {
-    box-shadow: 10px 10px #a2c0be;
+    box-shadow: 10px 10px $opal;
   }
 
   p {
@@ -963,34 +949,45 @@ footer {
   
   .menu-right {
     display: none;
+    border: 1px solid $alto;
+    & li:hover {
+      background-color: $athensGray;
+    }
   }
 
+  .dropdown-menu {
+    top: 110%;
+    transition: all 0.5s ease;
+  }
   // NIE DZIAŁA NA ENU-RIGHT
   .dropdown-about:hover .dropdown-menu,
   .dropdown-item.more:hover .menu-right {
-    border: 1px solid lightgray;
+    border: 1px solid $alto;
     padding: 0;
     text-align: left;
-    background: white;
+    background: $white;
     display: block;
-    color:#000;
+    color: $black;
     width: 200px;
   }
-
-  #more:hover {
-    color: red;
-  }
-
-
-  #more:hover .menu-right {
-    display: flex;
-    position: absolute;
-    opacity: 1;
-    right: -200px;
-    top: 160px;
-  }
+}
+.more:hover .menu-right {
+  display: flex;
+  position: absolute;
+  opacity: 1;
+  right: -128px;
+  top: 240px;
+  color: $black;
+  flex-direction: column;
+  background-color: $white;
 }
 
+.menu-right li {
+  padding: 12px 24px;
+  & a {
+    color:rgba(0, 0, 0, 0.55);
+  }
+}
 
 @media (min-width: 768px) {
   .my-col-7 {
@@ -1225,16 +1222,6 @@ footer {
   .description {
     padding: 0 3rem 5rem 3rem !important;
   }
-
-  // section .trainers {
-  //    .description {
-  //     padding-bottom: 5rem;
-  //   }
-  //   & .services, 
-  //   & .questions {
-  //     padding-top: 5rem;
-  //   }
-  // }
 }
 
 
