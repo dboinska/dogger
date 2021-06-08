@@ -157,6 +157,19 @@ links.forEach(function (link) {
     const previousLink = links.find(link =>
       link.classList.contains('active-link')
     );
+
+    const url = new URL(event.target.href);
+    if (url.hash === '#about') {
+      console.log('dcdcd');
+      event.preventDefault();
+      const parent = event.target.parentElement;
+      const sibling = parent.querySelector('.dropdown-menu');
+      sibling.classList.contains('d-block')
+        ? sibling.classList.remove('d-block')
+        : sibling.classList.add('d-block');
+      return;
+    }
+
     if (previousLink) {
       previousLink.classList.remove('active-link');
     }

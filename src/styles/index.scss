@@ -57,8 +57,7 @@ nav {
   .nav-link {
     z-index: 1;
     line-height: 3.7rem;
-    padding: 1rem;
-    padding: 1rem 3rem !important;
+    padding: 1rem 3rem;
 
     &:hover {
       background-color: $alto;
@@ -310,7 +309,7 @@ section {
   }
 } 
 
-li .dropdown-item {
+.dropdown-item {
   color: rgba(0, 0, 0, 0.55);
   padding: 12px 24px;
   
@@ -565,16 +564,17 @@ li .dropdown-item {
 section {
   &.services {
     padding: 5rem 3rem 5rem 3rem;
-}
+  }
+
   &.pricing {
-    & li::before {
+    li::before {
       content: '\f00c';
       font-family: 'Font Awesome 5 Free', serif;
       font-weight: 600;
       padding-left: 3rem;
     }
 
-    & span {
+    span {
       padding-left: 5rem;
       padding-right: 3rem;
       display: inline-block;
@@ -641,8 +641,8 @@ section {
   .customers-blockquote p {
     font-style: italic;
     font-weight: 400;
-    font-size: 18px;
-    color: $black !important;
+    font-size: 1.125rem;
+    color: $black;
     font-family: 'Vollkorn', serif;
   }
 
@@ -732,20 +732,20 @@ section {
     background-color: $paleSky;
   }
 
-  & .row {
+  .row {
     .contact {
         padding-bottom: 0;
       }
     }
 
-  & .paws {
+  .paws {
     padding-top: 7rem;
-  }
 
-  & .paws::before,
-  & .paws::after {
-    opacity: 0.3;
-    color: $opal;
+    &::before,
+    &::after {
+      opacity: 0.3;
+      color: $opal;
+    }
   }
 
   .container-contact {
@@ -754,12 +754,12 @@ section {
     }
   }
 
-  & h3 {
+  h3 {
     color: $mineralGreen;
     font-size: 2rem;
   }
 
-  & label {
+  label {
     padding-bottom: 0.5rem;
   }
 }
@@ -767,7 +767,7 @@ section {
 footer {
   background-color: $mineShaft;
 
-  & h3 {
+  h3 {
     padding-top: 7rem;
     font-size: 1rem;
     margin-bottom: 1.5rem;
@@ -781,13 +781,14 @@ footer {
 
     &:hover {
       background-color: $alto;
+      color: $black;
     }
   }
 
   form {
     .input-group > .form-control {
       width: 1%;
-  }
+    }
   }
 }
 
@@ -798,7 +799,7 @@ footer {
     }
   } 
 
-  & i {
+  i {
     color: $dustyGray;
     transition: color 0.3s ease;
 
@@ -807,7 +808,7 @@ footer {
     }
   }
 
-  & li {
+  li {
     transition: color 0.3s ease;
 
     &:hover {
@@ -815,13 +816,13 @@ footer {
     }
   }
 
-  & input:focus,
-  & .btn-newsletter:focus {
+  input:focus,
+  .btn-newsletter:focus {
     box-shadow: none !important;
     color: $white;
   }
 
-  & .b-bottom {
+  .b-bottom {
     padding-bottom: 6rem;
     border-bottom: 1px solid $boulder;
   } 
@@ -873,12 +874,12 @@ footer {
   }
 
   .trainers {
-    & img {
+    img {
       width: 80%;
       display: flex;
     }
-    & h4, 
-    & p {
+    h4, 
+    p {
       text-align: center;
       padding-left: 3rem;
       padding-right: 3rem;
@@ -950,13 +951,13 @@ footer {
   .menu-right {
     display: none;
     border: 1px solid $alto;
-    & li:hover {
+    li:hover {
       background-color: $athensGray;
     }
   }
 
   .dropdown-menu {
-    top: 110%;
+    top: 106%;
     transition: all 0.5s ease;
   }
   // NIE DZIAŁA NA ENU-RIGHT
@@ -1054,7 +1055,7 @@ footer {
   .align-self-center {
     padding-bottom: 2rem;
 
-    & .h1 {
+    .h1 {
       padding-top: 4rem;
     }
   }
@@ -1173,7 +1174,7 @@ footer {
   }
 
   .about-us {
-    & .row {
+    .row {
       padding-bottom: 0;
     }
   }

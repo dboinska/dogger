@@ -1,16 +1,18 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
-
+@import './index.scss';
+@import '_colors.scss';
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
   
   body {
     background-color: transparent;
-    color: gray;
+    color: $gray;
     font-family: 'Open Sans', sans-serif;
     transition: all 0.5s ease;
+  }
+
+  .container {
+    max-width: 1140px;
   }
 
   section {
@@ -19,7 +21,7 @@
     }
 
     .sub-p {
-        color: #999;
+        color: $dustyGray;
         font-size: 1.2rem;
         line-height: 1.5;
         font-weight: 300;   
@@ -31,36 +33,40 @@
     }
     
     .main-color {
-        color: #a2c0be;
+        color: $opal;
         transition: color 0.3s ease;
 
         &:hover {
-            color: #819997;
+            color: $grannySmith;
         }
     }
   }
 
   aside {
       .search-form {
-        background-color: rgb(247, 247, 247);
+        background-color: $alabaster;
         padding: 0.5rem;
     }  
 
-    .slidebar-box:not(.input-box) {
-        padding: 24px;
+    .slidebar-box {
+        padding: 25px;
     }
     .ul-categories {
         li {
-            border-bottom: 1px solid lightgray;
+            border-bottom: 1px solid $alto;
             padding: 0.5rem 0;
             position: relative;
         }
 
         a {
-            color: #a2c0be;
+            color: $opal;
             text-decoration: none;
             background-color: transparent;
-        
+            transition: color 0.3s ease;
+            
+            &:hover {
+                color: $black;
+            }
         }
         
         span {
@@ -76,49 +82,70 @@
     line-height: 2rem;
 }
 
+footer.article {
+    a {
+        color: $opal;
+            
+        &:hover {
+            color: $seaNymph;
+        }
+            
+    }
+}
+
 h3 {
     &.sub-h3 {
         font-size: 1.8rem;
-        color: rgb(128, 128, 128);
+        color: $gray;
     }
 }
 
 li {
-    &.comment::before {
-        content: ' ';
-    }
-    &.comment img {
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
+    &.comment {
+        &:before {
+            content: ' ';
+        }
+        img {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
     }
 }
 
 .comment {
     .sub-h4 {
         font-size: 20px;
-        color: rgb(128, 128, 128);
+        color: $gray;
     }
     
     .sub-span {
         text-transform: uppercase;
         font-size: 13px;
         letter-spacing: .1em;
-        color: #ccc;
+        color: $silver;
     }
 
     .reply {
         text-transform: uppercase;
-        color: black;
-        background-color: #e6e6e6;
+        color: $black;
+        background-color: $mercury;
         padding: 5px 10px;
         font-size: 14px;
         transition: all 0.5s ease;
 
         &:hover {
-            color: white;
-            background-color: #726f6f;
+            color: $white;
+            background-color: $doveGray;
         }
+    }
+}
+
+figure {
+    figcaption {
+        margin-top: 1rem;
+        font-style: italic;
+        font-size: 0.9rem;
     }
 }
 
@@ -130,8 +157,14 @@ li {
 
 .sub-h4 {
     font-size: 18px;
-margin-bottom: 15px;
-color: gray
+    margin-bottom: 15px;
+    color: $gray
+}
+
+.comments {
+    & .row {
+        margin-bottom: 30px;
+    }
 }
 
 footer {
