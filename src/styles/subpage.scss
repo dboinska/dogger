@@ -1,0 +1,174 @@
+@import './index.scss';
+@import '_colors.scss';
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: transparent;
+    color: $gray;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.5s ease;
+  }
+
+  .container {
+    max-width: 1140px;
+  }
+
+  section {
+    &.sub-hero {
+        height: 100vh;
+    }
+
+    .sub-p {
+        color: $dustyGray;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        font-weight: 300;   
+    }
+
+    p {
+        font-weight: 400;
+        padding: 0 0.5rem;
+    }
+    
+    .main-color {
+        color: $opal;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $grannySmith;
+        }
+    }
+  }
+
+  aside {
+      .search-form {
+        background-color: $alabaster;
+        padding: 0.5rem;
+    }  
+
+    .slidebar-box {
+        padding: 25px;
+    }
+    .ul-categories {
+        li {
+            border-bottom: 1px solid $alto;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        a {
+            color: $opal;
+            text-decoration: none;
+            background-color: transparent;
+            transition: color 0.3s ease;
+            
+            &:hover {
+                color: $black;
+            }
+        }
+        
+        span {
+            display: block;
+            position: absolute;
+            top: 0.5rem;
+            right: 0;
+        }
+    }
+  }
+
+.lead {
+    line-height: 2rem;
+}
+
+footer.article {
+    a {
+        color: $opal;
+            
+        &:hover {
+            color: $seaNymph;
+        }
+            
+    }
+}
+
+h3 {
+    &.sub-h3 {
+        font-size: 1.8rem;
+        color: $gray;
+    }
+}
+
+li {
+    &.comment {
+        &:before {
+            content: ' ';
+        }
+        img {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
+
+.comment {
+    .sub-h4 {
+        font-size: 20px;
+        color: $gray;
+    }
+    
+    .sub-span {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: .1em;
+        color: $silver;
+    }
+
+    .reply {
+        text-transform: uppercase;
+        color: $black;
+        background-color: $mercury;
+        padding: 5px 10px;
+        font-size: 14px;
+        transition: all 0.5s ease;
+
+        &:hover {
+            color: $white;
+            background-color: $doveGray;
+        }
+    }
+}
+
+figure {
+    figcaption {
+        margin-top: 1rem;
+        font-style: italic;
+        font-size: 0.9rem;
+    }
+}
+
+.form {
+    label {
+        padding: 1rem 0;
+    }
+}
+
+.sub-h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: $gray
+}
+
+.comments {
+    & .row {
+        margin-bottom: 30px;
+    }
+}
+
+footer {
+    &.article {
+        background-color: transparent;
+    }
+}
