@@ -1,4 +1,5 @@
 import 'bootstrap';
+import { doc } from 'prettier';
 import './js/slicksettings';
 import { debounce } from './js/utils.js';
 
@@ -8,14 +9,23 @@ import { debounce } from './js/utils.js';
 
 const navButton = document.getElementById('navbar-button');
 const { body } = document;
+const main = document.querySelector('main');
 navButton.addEventListener('click', openNav);
 
 const OVERFLOW_HIDDEN = 'overflow-hidden';
 
 function openNav() {
-  body.classList.contains(OVERFLOW_HIDDEN)
-    ? body.classList.remove(OVERFLOW_HIDDEN)
-    : body.classList.add(OVERFLOW_HIDDEN);
+  // body.classList.contains(OVERFLOW_HIDDEN)
+  //   ? body.classList.remove(OVERFLOW_HIDDEN)
+  //   : body.classList.add(OVERFLOW_HIDDEN);
+
+  if (body.classList.contains(OVERFLOW_HIDDEN)) {
+    body.classList.remove(OVERFLOW_HIDDEN);
+    main.classList.remove(OVERFLOW_HIDDEN);
+  } else {
+    body.classList.add(OVERFLOW_HIDDEN);
+    main.classList.add(OVERFLOW_HIDDEN);
+  }
 }
 
 const slideRows = document.querySelectorAll('.scroll-bottom');
@@ -158,17 +168,17 @@ links.forEach(function (link) {
       link.classList.contains('active-link')
     );
 
-    const url = new URL(event.target.href);
-    if (url.hash === '#about') {
-      console.log('dcdcd');
-      event.preventDefault();
-      const parent = event.target.parentElement;
-      const sibling = parent.querySelector('.dropdown-menu');
-      sibling.classList.contains('d-block')
-        ? sibling.classList.remove('d-block')
-        : sibling.classList.add('d-block');
-      return;
-    }
+    // const url = new URL(event.target.href);
+    // if (url.hash === '#about') {
+    //   console.log('dcdcd');
+    //   event.preventDefault();
+    //   const parent = event.target.parentElement;
+    //   const sibling = parent.querySelector('.dropdown-menu');
+    //   sibling.classList.contains('d-block')
+    //     ? sibling.classList.remove('d-block')
+    //     : sibling.classList.add('d-block');
+    //   return;
+    // }
 
     if (previousLink) {
       previousLink.classList.remove('active-link');
@@ -216,4 +226,56 @@ dropdowns.forEach(function (dropdown) {
     }
     event.target.classList.add('active-link');
   });
+});
+
+// video
+
+const videoButton = document.querySelector('.video');
+videoButton.addEventListener('click', () => {
+  console.log('clicked');
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+  overlay.classList.add('video-overlay');
+  document.body.classList.add(OVERFLOW_HIDDEN);
+  document.body.appendChild(overlay);
+  const videoPlayer = document.createElement('video');
+
+  const videoSource = document.createElement('source');
+  videoSource.src =
+    'https://player.vimeo.com/external/364841370.sd.mp4?s=8a3174708b70bbb90526d5aad598bd918223c202&profile_id=139&oauth2_token_id=57447761';
+  videoSource.type = 'video/mp4';
+  videoPlayer.autoplay = 'autoplay';
+  videoPlayer.controls = true;
+  overlay.appendChild(videoPlayer);
+  videoPlayer.appendChild(videoSource);
+
+  overlay.addEventListener('click', closeVideo);
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closeVideo();
+    }
+  });
+
+  function closeVideo() {
+    overlay.classList.remove('video-overlay');
+
+    document.body.classList.remove(OVERFLOW_HIDDEN);
+  }
+});
+
+// links
+
+// $('navbar-toggler-icon').click(function () {
+//   $(this).toggleClass(
+//     'mobile-inner-header-icon-click mobile-inner-header-icon-out'
+//   );
+//   $('.navbar-collapse').slideToggle(250);
+// });
+
+// $('.mnavbar-collapse a').each(function (index) {
+//   $(this).css({ 'animation-delay': index / 10 + 's' });
+// });
+
+'.navbar-toggler-icon'.addEventListener('click', function () {
+  this.toggleClass('');
 });
