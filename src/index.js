@@ -1,5 +1,5 @@
 import 'bootstrap';
-import { doc } from 'prettier';
+//import { doc } from 'prettier';
 import './js/slicksettings';
 import { debounce } from './js/utils.js';
 
@@ -231,7 +231,7 @@ dropdowns.forEach(function (dropdown) {
 // video
 
 const videoButton = document.querySelector('.video');
-videoButton.addEventListener('click', () => {
+function playVideo() {
   console.log('clicked');
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
@@ -250,18 +250,24 @@ videoButton.addEventListener('click', () => {
   videoPlayer.appendChild(videoSource);
 
   overlay.addEventListener('click', closeVideo);
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-      closeVideo();
-    }
-  });
+  document.addEventListener('keydown', handleEscPress);
 
   function closeVideo() {
     overlay.classList.remove('video-overlay');
-
     document.body.classList.remove(OVERFLOW_HIDDEN);
+    overlay.removeEventListener('click', closeVideo);
+    document.removeEventListener('keydown', handleEscPress);
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
   }
-});
+
+  function handleEscPress(event) {
+    if (event.key === 'Escape') {
+      closeVideo();
+    }
+  }
+}
+videoButton.addEventListener('click', playVideo);
 
 // links
 
@@ -276,6 +282,4 @@ videoButton.addEventListener('click', () => {
 //   $(this).css({ 'animation-delay': index / 10 + 's' });
 // });
 
-'.navbar-toggler-icon'.addEventListener('click', function () {
-  this.toggleClass('');
-});
+//
