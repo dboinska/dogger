@@ -13,16 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Callenowy/learning-hub.git"
-  },
-  "author": "Callenowy",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Callenowy/learning-hub/issues"
-  },
-  "homepage": "https://github.com/Callenowy/learning-hub#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
